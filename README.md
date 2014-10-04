@@ -16,12 +16,12 @@ Slick Extractors allows users to iterate over the results of a Slick query, grou
 
 Slick Extractors is a port of the *extractors library* from *SQLest* by JHC Systems.
 
-This code is currently in an alpha state and feature limited. Suggestions and contributions from the community are welcomed.
+This code is currently in an alpha state and feature limited. Suggestions and contributions welcome.
 
 Synopsis
 --------
 
-The extractor library isn't as powerful as SQLest extractors, but it does provide enough primites to satisfy common cases:
+The extractor library isn't as powerful as SQLest extractors, but it does provide enough primitives to satisfy common use cases:
 
 ~~~ scala
 import com.davegurnell.slick.extractor.Extract
@@ -82,6 +82,10 @@ tupled(results)
 //   (2, Seq("b", "c", "c"))
 // )
 ~~~
+
+For further examples see the [unit tests].
+
+[unit tets]: https://github.com/davegurnell/slick-extractors/blob/develop/src/test/scala/com/davegurnell/slick/extractor
 
 Acknowledgements
 ----------------
