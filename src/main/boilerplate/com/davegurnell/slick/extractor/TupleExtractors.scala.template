@@ -1,0 +1,38 @@
+package com.davegurnell.slick.extractor
+
+[1..22#class Tuple1Extractor[[#A1, B1#]]([#val e1: Extractor[A1, B1]#]) extends TupleExtractor[Tuple1[[#A1#]], Tuple1[[#B1#]]] {
+  type Input = Tuple1[[#A1#]]
+
+  type Output = Tuple1[[#B1#]]
+
+  type Accumulator = Tuple1[[#e1.Accumulator#]]
+
+  def init(input: Input): Accumulator = Tuple1(
+    [#e1.init(input._1)#,
+    ]
+  )
+
+  def accumulate(input: Input, accum: Accumulator): Accumulator = Tuple1(
+    [#e1.accumulate(input._1, accum._1)#,
+    ]
+  )
+
+  def mustEmit(input: Input, accum: Accumulator): Boolean =
+    [#e1.mustEmit(input._1, accum._1)# ||
+    ]
+
+  def emit(accum: Accumulator): Output = Tuple1(
+    [#e1.emit(accum._1)#,
+    ]
+  )
+}#
+
+]
+
+trait TupleExtractors {
+  [1..22#def tuple[[#A1, B1#]]([#e1: Extractor[A1, B1]#]): Tuple1Extractor[[#A1, B1#]] =
+    new Tuple1Extractor([#e1#])#
+
+  ]
+}
+
