@@ -85,7 +85,7 @@ tupled(results)
 
 For further examples see the [unit tests].
 
-[unit tets]: https://github.com/davegurnell/slick-extractors/blob/develop/src/test/scala/com/davegurnell/slick/extractor
+[unit tests]: https://github.com/davegurnell/slick-extractors/blob/develop/src/test/scala/com/davegurnell/slick/extractor
 
 Acknowledgements
 ----------------
